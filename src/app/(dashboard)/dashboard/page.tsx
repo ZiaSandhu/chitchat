@@ -1,20 +1,18 @@
-import { getServerSession } from 'next-auth'
 import { FC } from 'react'
-import { authOptions } from '@/lib/auth'
+
 interface pageProps {
   
 }
 
 const page: FC<pageProps> = async({}) => {
 
-    const session =  await getServerSession(authOptions)
 
   return (
-    <div className='p-10'>
-      <h1>name: {session?.user?.name}</h1>
-      <h1>image: {session?.user?.image}</h1>
-      <h1>id: {session?.user?.id}</h1>
-      <h1>email: {session?.user?.email}</h1>
+    <div className="m-auto min-h-full flex items-center justify-center">
+      <div className='-mt-32'>
+        <img className="mx-auto h-32 w-32" src="/chat.svg" alt="chat icon" />
+        <p className="text-center text-2xl text-muted">Select Chat to view conversation</p>
+      </div>
     </div>
   );
 }
